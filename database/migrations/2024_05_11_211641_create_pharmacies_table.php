@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('pharmacies', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('adresse');
+            $table->string('tel');
+            $table->string('email');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->foreignId('secteur_id')->constrained('secteurs')->onDelete('cascade');;
+            $table->string('tel');
             $table->timestamps();
         });
     }
